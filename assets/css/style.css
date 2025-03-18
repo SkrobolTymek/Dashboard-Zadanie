@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+html body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(20,23,29,255);
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+    }
+.polygon{
+    width: 100%;
+    height: 100%;
+    background-color: #25a74c86;
+    border: solid 1px white;
+    filter: opacity(200%);
+
+}
+.wiekszyPolygon{
+    width: 80%;
+    height: 60%;
+    background-color: antiquewhite;
+    filter: opacity(50%);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+    .divGrid{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(37,40,48,255);
+        border-radius: 10px;
+        transition: .3s;
+    }
+    .divGrid:hover{
+        transition: .3s;
+        scale: 1.05;
+    }
+    .circle{
+        
+        width: 70%;
+        height: 70%;
+
+        clip-path: circle(33.3% at 50% 50%);
+    }
+    .dot{
+        width: 50%;
+        height: 50%;
+        background-color: rgba(37,40,48,255);
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        clip-path: circle(50% at 50% 50%);
+        z-index: 1000;
+    }
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 40px;
+    width: 90%;
+    height: 90%;
+}
+.wykres{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+} 
+#przyrost,#przyrost2{
+    color: #25a74c;
+}
+#prostakat{
+    margin-bottom: 20px;
+}
+.one,.two ,.three,.four,.five{
+    width: 10%;
+    background-color: #9932cc;
+}
+#div1 {
+    grid-row: span 2 / span 2;
+}
+
+#div2 {
+    grid-row: span 2 / span 2;
+}
+
+#div3 {
+    grid-row: span 2 / span 2;
+}
+
+#div4 {
+    grid-row: span 2 / span 2;
+}
+
+#div5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-row-start: 3;
+}
+
+#div6 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+        
+
+@MEDIA (max-width: 768px) {
+
+	html body {
+		width: 100%;
+		height: auto;
+	}
+}
