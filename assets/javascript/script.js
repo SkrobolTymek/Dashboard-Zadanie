@@ -19,11 +19,11 @@ let clients = [
     { month1: "746", month2: "938" }
 ];
 let skladniki = [
-    { nazwa: "Szynka", procent1: 50 },
+    { nazwa: "Szynka", procent1: 90 },
     { nazwa: "Pieczarki", procent1: 80 },
-    { nazwa: "Papryka", procent1: 90 },
-    { nazwa: "Cebula", procent1: 20 },
-    { nazwa: "Oliwki", procent1: 25 },
+    { nazwa: "Papryka", procent1: 70 },
+    { nazwa: "Cebula", procent1: 50 },
+    { nazwa: "Oliwki", procent1: 40 },
 ];
 let polygon = document.getElementById("polygonik");
 function generateClipPath(data) {
@@ -40,7 +40,7 @@ function generateClipPath(data) {
         points.push(`${x}% ${y}%`);
     });
 
-    return `polygon(50% 50%, ${points.join(", ")})`;
+    return `polygon( ${points.join(", ")})`;
 }
 
 polygon.style.clipPath = generateClipPath(skladniki);
