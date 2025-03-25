@@ -33,18 +33,18 @@ body {
     width: 100%;
     height: 100%;
 
-    background-color: #25a74c86;
+    background-color: #e2b6f8;
     border: solid 1px white;
 
-    filter: opacity(200%);
+    
 }
 
 .wiekszyPolygon {
-    width: 50%;
+    width: 70%;
     aspect-ratio: 1/1;
-    background-color: antiquewhite;
-    filter: opacity(50%);
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    background-color: #9932cc;
+    
+    clip-path: polygon(50% 0%, 100% 48%, 82% 100%, 18% 100%, 0 46%);
 }
 
 .divGrid {
@@ -89,8 +89,8 @@ body {
 }
 
 .wykres {
-    width: 100%;
-    height: 90%;
+    width: 90%;
+    height: 80%;
     display: flex;
     flex-direction: row;
     display: flex;
@@ -101,9 +101,8 @@ body {
 }
 .chart {
     width: 100%;
-    height: 80%;
+    height: 100%;
     position: absolute;
-    height: 90%;
     display: flex;
     flex-direction: row;
     display: flex;
@@ -112,7 +111,6 @@ body {
     align-items: flex-end;
     z-index: 99999;
     gap: 20px;
-    top: -8%;
 }
 
 .month {
@@ -124,8 +122,58 @@ body {
 #przyrost2 {
     color: #25a74c;
 }
-
-
+.up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+.middle{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.l{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.r{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.mid{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.down{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+}
+.downL{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.downR{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .one,
 .two,
 .three,
@@ -147,11 +195,21 @@ body {
     grid-row: span 2 / span 2;
 }
 
+#div1 p, #div1 h2, #div2 p, #div2 h2, #div3 p, #div3 h2 {
+    font-size: 125%;
+}
+
+#div5 p, #div5 h2, #div6 p, #div6 h2 {
+    font-size: 300%;
+}
+
 #div4 {
     grid-row: span 2 / span 2;
 }
 
 #div5 {
+    display: flex;
+    flex-direction: column;
     grid-column: span 2 / span 2;
     grid-row: span 4 / span 4;
     grid-row-start: 3;
@@ -163,12 +221,17 @@ body {
     grid-column-start: 3;
     grid-row-start: 3;
 }
+
+#div1 h3, #div2 h3, #div3 h3, #div4 h3 {
+    font-size: 75%;
+}
+
 .siatka{
     position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     
@@ -176,7 +239,7 @@ body {
 .line{
     height: 1px;
     background-color: white;
-    width: 80%;
+    width: 85%;
     z-index: 1;
     text-align: left;
 }

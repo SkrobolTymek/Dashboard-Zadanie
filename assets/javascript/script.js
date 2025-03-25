@@ -19,12 +19,31 @@ let clients = [
     { month1: "746", month2: "938" }
 ];
 let skladniki = [
-    { nazwa: "szynka", procent1: "50", procent2: "10" },
-    { nazwa: "Pieczarki", procent1: "80", procent2: "30" },
-    { nazwa: "Papryka", procent1: "90", procent2: "65" },
-    { nazwa: "Cebula", procent1: "20", procent2: "75" },
-    { nazwa: "Oliwki", procent1: "25", procent2: "40" },
+    { nazwa: "Szynka", procent1: 50 },
+    { nazwa: "Pieczarki", procent1: 80 },
+    { nazwa: "Papryka", procent1: 90 },
+    { nazwa: "Cebula", procent1: 20 },
+    { nazwa: "Oliwki", procent1: 25 },
 ];
+let polygon = document.getElementById("polygonik");
+function generateClipPath(data) {
+    let points = [];
+    let center = 50; 
+    let total = data.length; 
+
+    data.forEach((item, index) => {
+        let angle = (index / total) * (2 * Math.PI); 
+        let r = item.procent1 * 0.5; 
+        let x = center + r * Math.cos(angle); 
+        let y = center + r * Math.sin(angle);
+
+        points.push(`${x}% ${y}%`);
+    });
+
+    return `polygon(50% 50%, ${points.join(", ")})`;
+}
+
+polygon.style.clipPath = generateClipPath(skladniki);
 
 
 let kolo = document.querySelector("#kolo");
@@ -42,8 +61,8 @@ let obliczenie2 = (roznica2 / clients[0].month1) * 100;
 NowiKlienci.innerText = `${clients[0].month2}`;
 przyrost2.innerText = `${obliczenie2.toFixed(2)}%`
 
-let polygon = document.getElementById("polygonik");
-polygon.style.clipPath = `polygon(${skladniki[0].procent1}% ${skladniki[0].procent2}%, ${skladniki[1].procent1}% ${skladniki[1].procent2}%, ${skladniki[2].procent1}% ${skladniki[2].procent2}%, ${skladniki[3].procent1}% ${skladniki[3].procent2}%, ${skladniki[4].procent1}% ${skladniki[4].procent2}%)`;
+
+
 
 let NowaCena = document.getElementById("NowaCena");
 let przyrost = document.getElementById("przyrost");
