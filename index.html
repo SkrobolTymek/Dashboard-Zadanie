@@ -4,34 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaktywna strona Dashboard</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/general.css">
+    <link rel="stylesheet" href="assets/utils.css">
 </head>
 
 <body>
-    <div class="parent">
-        <div id="div1" class="divGrid">
-            <p>Dochody pizzeri</p>
-            <h2 id="NowaCena"></h2>
-            <p id="przyrost"></p>
+    <main class="container">
+        <div class="part">
+            <h2>Dochody pizzeri</h2>
+            <p id="price" class="count">100</p>
+            <p id="price-stats" class="stats" style="color: chartreuse;">60% <svg xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up">
+                    <path d="m5 12 7-7 7 7" />
+                    <path d="M12 19V5" />
+                </svg></p>
         </div>
-        <div id="div2" class="divGrid">
-            <p>Ilość Klientów</p>
-            <h2 id="NowiKlienci"></h2>
-            <p id="przyrost2"></p>
+        <div class="part">
+            <h2>Ilość Klientów</h2>
+            <p id="customers" class="count">100</p>
+            <p id="customers-stats" class="stats" style="color: chartreuse;">-40%<svg xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down">
+                    <path d="M12 5v14" />
+                    <path d="m19 12-7 7-7-7" />
+                </svg></p>
         </div>
-        <div id="div3" class="divGrid">
-            <p>test3</p>
+        <div class="part">
+            <h2>Ilość zamówień</h2>
+            <p id="orders" class="count">99</p>
+            <p id="orders-stats" class="stats" style="color: white;">0<svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus">
+                    <path d="M5 12h14" />
+                </svg></p>
         </div>
-        <div id="div4" class="divGrid">
+        <div class="part">
             <p>Procentowy udział Sprzedaży pizzy w porach roku</p>
-            <div class="circle" id="kolo">
-
-            </div>
-
+            <div class="circle" id="circle"></div>
         </div>
-        <div id="div5" class="divGrid">
-
+        <div class="part part-big">
             <div class="middle">
                 <div class="up"> Szynka</div>
                 <div class="mid">
@@ -49,41 +63,47 @@
                     <div class="downR">Papryka</div>
                 </div>
             </div>
-
         </div>
-        <div id="div6" class="divGrid">
-            <div class="wykres" id="wykres">
-                <div class="chart">
-                    <div class="one" id="prostakat">
-                        <h3 class="month">Jan</h3>
+        <div class="part part-big">
+            <div class="part-big-wrapper">
+                <div class="wykres" id="wykres">
+                    <div class="chart">
+                        <div class="one chart-part" id="prostakat">
+                            <h3 class="month">Jan</h3>
+                            <p class="chart-value" id="one-value">Wartość: 0</p>
+                        </div>
+                        <div class="two chart-part" id="prostakat">
+                            <h3 class="month">Feb</h3>
+                            <p class="chart-value" id="two-value">Wartość: 0</p>
+                        </div>
+                        <div class="three chart-part" id="prostakat">
+                            <h3 class="month">Mar</h3>
+                            <p class="chart-value" id="three-value">Wartość: 0</p>
+                        </div>
+                        <div class="four chart-part" id="prostakat">
+                            <h3 class="month">Apr</h3>
+                            <p class="chart-value" id="four-value">Wartość: 0</p>
+                        </div>
+                        <div class="five chart-part" id="prostakat">
+                            <h3 class="month">May</h3>
+                            <p class="chart-value" id="five-value">Wartość: 0</p>
+                        </div>
                     </div>
-                    <div class="two" id="prostakat">
-                        <h3 class="month">Feb</h3>
+                    <div class="siatka">
+                        <div class="line">100</div>
+                        <div class="line">80</div>
+                        <div class="line">60</div>
+                        <div class="line">40</div>
+                        <div class="line">20</div>
+                        <div class="line">0</div>
                     </div>
-                    <div class="three" id="prostakat">
-                        <h3 class="month">Mar</h3>
-                    </div>
-                    <div class="four" id="prostakat">
-                        <h3 class="month">Apr</h3>
-                    </div>
-                    <div class="five" id="prostakat">
-                        <h3 class="month">May</h3>
-                    </div>
-                </div>
-                <div class="siatka">
-                    <div class="line">100</div>
-                    <div class="line">80</div>
-                    <div class="line">60</div>
-                    <div class="line">40</div>
-                    <div class="line">20</div>
-                    <div class="line">0</div>
                 </div>
             </div>
-
         </div>
-    </div>
+    </main>
 
-    <script src="assets/javascript/script.js"></script>
+    <script src="assets/js/stats.js"></script>
+    <script src="assets/js/drag.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    margin: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(20, 23, 29, 255);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+
+.container {
+    width: 97%;
+    height: 95%;
+
+    display: grid;
+    grid-template-areas: "part part part part" "part part";
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+    gap: 30px;
+}
+
+.part {
+    grid-area: "part";
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(37, 40, 48, 255);
+    border: #363942 solid 1px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+}
+
+.part-wrapper {
+    width: 100%;
+    background-color: beige;
+}
+
+.count {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.stats {
+    font-size: 20px;
+    font-weight: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.part-big {
+    grid-column: span 2;
+}
+
+.circle {
+    width: 80%;
+    height: 80%;
+
+    aspect-ratio: 1/1;
+
+    clip-path: circle(33.3% at 50% 50%);
+}
+
+.wykres {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 99999;
+    gap: 20px;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five {
+    width: 10%;
+    background-color: #9932cc;
+}
+
+.siatka {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.line {
+    height: 1px;
+    background-color: white;
+    width: 85%;
+    z-index: 1;
+    text-align: left;
+}
+
+.month {
+    position: absolute;
+    bottom: -5%;
+}
+
+.part-big-wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-value {
+    display: none;
+}
+.chart-part:hover .chart-value {
+    display: block;
+    position: absolute;
+    padding: 10px 20px;
+    margin-left: -3%;
+    margin-top: -6%;
+
+    border-radius: 10px;
+
+    background-color: rgba(37, 40, 48, 255);
+    border: #363942 solid 1px;
+}
+
+@media (max-width: 1400px) {
+    body {
+        height: auto;
+        align-items: start;
+
+        display: block;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        margin-top: 10px;
+        height: auto;
+        grid-template-areas: "part part" "part part" "part" "part";
+        grid-template-rows: 0.5fr 0.5fr 0.5fr;
+        grid-template-columns: 0.5fr 0.5fr;
+    }
+
+    .part {
+        height: 100%;
+        width: 97.9%;
+    }
+
+    .circle {
+        width: 20%;
+    }
+    .wykres {
+        height: 400px;
+    }
+    .part-big-wrapper {
+        height: 500px;
+    }
+    
+    .one,
+    .two,
+    .three,
+    .four,
+    .five {
+        width: 6%;
+        background-color: #9932cc;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        height: auto;
+        grid-template-areas: "part" "part" "part" "part" "part" "part";
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        grid-template-columns: 1fr;
+    }
+
+    .circle {
+        width: 20%;
+    }
+
+    .part-big {
+        grid-column: span 1;
+    }
+}
