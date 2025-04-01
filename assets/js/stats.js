@@ -1,7 +1,7 @@
 const orders = [1, 2, 3, 1];
 
 let circle = [
-    { start: "0", end: "20", color: "#baffc9" },
+    { start: "0", end: "30", color: "#baffc9" },
     { start: "30", end: "60", color: "#ffffba" },
     { start: "60", end: "85", color: "#ffdfba" },
     { start: "85", end: "100", color: "#bae1ff" },
@@ -51,13 +51,9 @@ setInterval(() => {
     let result = ((randomFloat - priceList[0].newPrice) / priceList[0].newPrice) * 100;
 
 
-    if (randomFloat > priceList[0].newPrice) {
-        priceStats.style.color = "chartreuse";
-        priceStats.innerHTML = "+" + result.toFixed(2) + '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>'
-    } else {
-        priceStats.style.color = "red";
-        priceStats.innerHTML = "-" + result.toFixed(2) + '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus"><path d="M5 12h14"/></svg>';
-    }
+    priceStats.style.color = "chartreuse";
+    priceStats.innerHTML = "+" + -result.toFixed(2) + '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>'
+
     price.innerText = Number.parseFloat((priceList[0].newPrice + randomFloat)).toFixed(2)  + "$";
 
     priceList[0].oldPrice = priceList[0].newPrice;
